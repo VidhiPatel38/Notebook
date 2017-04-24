@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets"
+                template="./userMain.xhtml"
+                xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:f="http://xmlns.jcp.org/jsf/core"
+                xmlns:h="http://xmlns.jcp.org/jsf/html">
+
+  
+    <ui:define name="content">
+        <h:outputText rendered="#{record.records.size() == 0}" 
+                      style="font:14pt Segoe UI bold;color:red; padding: 5px; text-align: left;"
+                      value="No entires found!"/>
+             
+
+        <h:dataTable rendered="#{record.records.size()> 0}" 
+                     style="font:14pt Segoe UI bold; padding: 5px; text-align: left;"
+                     value="#{record.records}" 
+                     var="record" width="100%" >
+            <h:column>
+                <f:facet name="header"> Date </f:facet>
+                    #{record.date}
+            </h:column>
+
+            <h:column>
+                <f:facet name="header"> Time </f:facet>
+                    #{record.time}
+            </h:column>
+
+            <h:column>
+                <f:facet name="header"> Notes </f:facet>
+                    #{record.displayRecord}
+            </h:column>
+
+            <h:column>
+                <f:facet name="header"> Update </f:facet>
+                <a href="updateNote.xhtml?id=#{record.id}" class="editBox">Edit</a>&nbsp;
+                <h:commandLink actionListener="#{record.delete}" 
+                       onclick="return confirm('delete this Record??')"
+                       value="Delete" class="editBox">
+                    <f:param  name="id" value="#{record.id}" />
+                </h:commandLink>
+             </h:column>
+        </h:dataTable>
+    </ui:define>
+</ui:composition>

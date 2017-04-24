@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets"
+                template="userMain.xhtml"
+                xmlns:p="http://xmlns.jcp.org/jsf/passthrough"
+                xmlns:h="http://xmlns.jcp.org/jsf/html">
+
+   
+    <ui:define name="content">
+            <h:form>
+           
+                Date 
+                <h:inputText  id="recordDate" value="#{record.date}" 
+                              p:required="required"
+                              p:type="date"  /> &nbsp;     
+                Time 
+                <h:inputText  id="recordTime" value="#{record.time}"
+                              p:type="time" p:step="60" />
+                <p/>
+                Enter Note
+                <br/>
+                <h:inputTextarea  id="recordText" value="#{record.notes}" 
+                                   p:required="required" rows="5" 
+                                   cols="80"              /> 
+                <p/>
+                <h:commandButton  value="Save" 
+                                  actionListener="#{record.add}" />
+                <p/>
+                <h:outputText value="#{record.message}" />
+            </h:form>
+    </ui:define>
+
+</ui:composition>

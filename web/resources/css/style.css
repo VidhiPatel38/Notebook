@@ -1,0 +1,59 @@
+body {
+    background-color: #ffffff;
+    font-size: 11pt;
+    font-family: Segoe UI;
+}
+
+a {
+    font-weight: bold;
+}
+
+.menu {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    background-color: silver;
+    margin-bottom: 5px;
+    margin-top: 5px;
+}
+
+h2{
+    
+    color:crimson;
+}
+.user {
+    float: right;
+    position:relative;
+    
+}
+
+th {
+    
+    background-color:black;
+    font-weight: bold;
+    color:white;
+    font-family: Segoe UI;
+}
+
+td {
+    
+    text-align: center;
+}
+
+.header {
+     color:black;
+     font-size:32pt;
+     font-weight: bold;
+     font-family: Segoe UI;
+     letter-spacing: 5pt;
+     text-align: center;
+     padding-top: 5px;
+     padding-bottom: 5px;
+     margin-bottom: 5px;
+     margin-top: 5px;
+}
+
+.editBox{
+    border:solid;
+    padding: 5px;
+    background-color: white;
+}
